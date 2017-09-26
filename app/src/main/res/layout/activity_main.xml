@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/home"
+    android:launchMode="singleTop">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <RelativeLayout
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/header"
+            android:background="?attr/colorPrimary"
+            android:padding="16dp"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark"
+            android:orientation="vertical"
+            android:gravity="bottom"
+            >
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_nama_depan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/nama_depan"
+                    android:inputType="text"
+                    android:hint="Nama Depan"
+                    />
+
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_nama_belakang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/input_layout_nama_depan">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/nama_belakang"
+                    android:inputType="text"
+                    android:hint="Nama Belakang"/>
+
+            </android.support.design.widget.TextInputLayout>
+        </RelativeLayout>
+
+
+
+        <ScrollView
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/header"
+            android:id="@+id/sv"
+            >
+
+            <RelativeLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                >
+
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/text_input_layout_dateofbirth"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+                    <EditText
+                        android:id="@+id/dateOfBirth"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:hint="Date of Birth"
+                        />
+
+
+                </android.support.design.widget.TextInputLayout>
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/text_input_layout_nationality"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/text_input_layout_dateofbirth">
+                    <EditText
+                        android:id="@+id/alamat"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:inputType="text"
+                        android:hint="Nationality"
+                        />
+
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/text_input_layout_agama"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/text_input_layout_nationality">
+
+                    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:id="@+id/groupAgama">
+                        <TextView
+                            android:id="@+id/tv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            android:text="Religion"
+                            />
+
+                        <RadioButton android:id="@+id/radio_pirates"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Islam"
+                            />
+                        <RadioButton android:id="@+id/radio_ninjas"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Catholic"
+                            />
+                        <RadioButton android:id="@+id/radio_ninjas"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Christian"
+                            />
+                        <RadioButton android:id="@+id/radio_ninjas"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Hindu"
+                            />
+                        <RadioButton android:id="@+id/radio_ninjas"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Budha"
+                            />
+
+                    </RadioGroup>
+
+
+                </android.support.design.widget.TextInputLayout>
+
+                <!--<android.support.design.widget.TextInputLayout-->
+                    <!--android:id="@+id/text_input_layout_hobby"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_below="@id/text_input_layout_agama">-->
+                    <!--<EditText-->
+                        <!--android:id="@+id/hobby"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:inputType="text"-->
+                        <!--android:hint=""-->
+                        <!--/>-->
+
+
+                <!--</android.support.design.widget.TextInputLayout>-->
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/text_input_layout_hobby"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/text_input_layout_agama">
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            android:text="Hobby"
+                            />
+
+                        <CheckBox
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/basket"
+                            android:text="Basket"/>
+                        <CheckBox
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/bola"
+                            android:text="Bola"/>
+
+
+                </android.support.design.widget.TextInputLayout>
+
+
+
+
+                <!--<android.support.design.widget.TextInputLayout-->
+                    <!--android:id="@+id/text_input_layout_kota_asal"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+
+                    <!--android:layout_below="@id/text_input_layout_hobby">-->
+
+
+
+                <!--</android.support.design.widget.TextInputLayout>-->
+
+
+
+
+
+
+
+
+
+            </RelativeLayout>
+
+
+        </ScrollView>
+
+
+
+    </RelativeLayout>
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:clickable="true"
+        android:src="@drawable/ic_done_black_24dp"
+        app:layout_anchor="@id/sv"
+        app:layout_anchorGravity="bottom|right|end"/>
+</android.support.design.widget.CoordinatorLayout>
+
+
+
+
+
