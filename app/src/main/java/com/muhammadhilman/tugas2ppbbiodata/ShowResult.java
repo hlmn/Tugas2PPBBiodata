@@ -9,8 +9,10 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ShowResult extends AppCompatActivity {
 
@@ -23,14 +25,34 @@ public class ShowResult extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
+        List<String> test;
+        String resultNama;
+        TextView nama = (TextView) findViewById(R.id.resultNama);
+        TextView nationality = (TextView) findViewById(R.id.resultNationality);
+        TextView dateOfBirth = (TextView) findViewById(R.id.resultDateOfBirth);
+        TextView agama = (TextView) findViewById(R.id.resultAgama);
+        TextView hobby = (TextView) findViewById(R.id.resultHobby);
 
 
 
 
+        test = getIntent().getStringArrayListExtra("hobby");
+        if(test != null) {
+            StringBuffer resultHobby = new StringBuffer();
+            for (int i = 0;i<test.size();i++){
+                if(i == 0) resultHobby.append(test.get(i));
+                else resultHobby.append("\n" + test.get(i));
+            }
+            hobby.setText(resultHobby.toString());
+        }
+        resultNama = getIntent().getStringExtra("hasil_nama_depan")+" "+getIntent().getStringExtra("hasil_nama_belakang");
+        nama.setText(resultNama);
+        nationality.setText(getIntent().getStringExtra("nationality"));
+        dateOfBirth.setText(getIntent().getStringExtra("dateOfBirth"));
+        agama.setText(getIntent().getStringExtra("agama"));
 
-        ArrayList<String> test = getIntent().getStringArrayListExtra("hobby");
 
-        Log.d("debugbosQ", test.toString());
+
 
 
 

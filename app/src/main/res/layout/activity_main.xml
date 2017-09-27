@@ -15,11 +15,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/header"
-            android:background="?attr/colorPrimary"
+            android:elevation="2dp"
+            android:background="@drawable/myrect"
             android:padding="16dp"
             android:theme="@style/ThemeOverlay.AppCompat.Dark"
             android:orientation="vertical"
             android:gravity="bottom"
+
             >
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/input_layout_nama_depan"
@@ -88,7 +90,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/text_input_layout_dateofbirth">
                     <EditText
-                        android:id="@+id/alamat"
+                        android:id="@+id/nationality"
                         android:layout_height="wrap_content"
                         android:layout_width="match_parent"
                         android:inputType="text"
@@ -117,27 +119,27 @@
                             android:text="Religion"
                             />
 
-                        <RadioButton android:id="@+id/radio_pirates"
+                        <RadioButton android:id="@+id/islam"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Islam"
                             />
-                        <RadioButton android:id="@+id/radio_ninjas"
+                        <RadioButton android:id="@+id/catholic"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Catholic"
                             />
-                        <RadioButton android:id="@+id/radio_ninjas"
+                        <RadioButton android:id="@+id/christian"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Christian"
                             />
-                        <RadioButton android:id="@+id/radio_ninjas"
+                        <RadioButton android:id="@+id/hindu"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Hindu"
                             />
-                        <RadioButton android:id="@+id/radio_ninjas"
+                        <RadioButton android:id="@+id/budha"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Budha"

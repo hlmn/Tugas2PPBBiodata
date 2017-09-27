@@ -28,9 +28,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(this);
-
-
-
     }
 
     @Override
@@ -38,6 +35,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     {
         sendResult();
     }
+
     public void sendResult()
     {
 
@@ -45,6 +43,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Intent intent = new Intent(this, ShowResult.class);
         EditText namaDepan = (EditText) findViewById(R.id.nama_depan);
         EditText namaBelakang = (EditText) findViewById(R.id.nama_belakang);
+        EditText dateOfBirth = (EditText) findViewById(R.id.dateOfBirth);
+        EditText nationality = (EditText) findViewById(R.id.nationality) ;
 
         hobby1=(CheckBox)findViewById(R.id.bola);
         hobby2=(CheckBox)findViewById(R.id.basket);
@@ -52,8 +52,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Log.d("debugoi", namaDepan.getText().toString());
 
 
-        intent.putExtra("namaDepan", namaDepan.getText());
-        intent.putExtra("namaBelakang", namaBelakang.getText());
+
 
         if(hobby1.isChecked()){
             hobby.add(hobby1.getText().toString());
@@ -62,14 +61,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             hobby.add(hobby2.getText().toString());
         }
 
-        intent.putStringArrayListExtra("hobby", (ArrayList<String>) hobby);
+        if(!hobby.isEmpty()) intent.putStringArrayListExtra("hobby", (ArrayList<String>) hobby);
+
 
         RadioGroup agama = (RadioGroup) findViewById(R.id.groupAgama);
 
-        int selectedId = agama.getCheckedRadioButtonId();
-        RadioButton buttonAgama = (RadioButton) findViewById(selectedId);
 
-        intent.putExtra("agama", buttonAgama.getText());
+        if(!(agama.getCheckedRadioButtonId() == -1)){
+            Log.d("debugoi","masuk");
+            int selectedId = agama.getCheckedRadioButtonId();
+            RadioButton buttonAgama = (RadioButton) findViewById(selectedId);
+            intent.putExtra("agama", buttonAgama.getText().toString());
+        }
+
+        intent.putExtra("hasil_nama_depan", namaDepan.getText().toString());
+        intent.putExtra("hasil_nama_belakang", namaBelakang.getText().toString());
+        intent.putExtra("dateOfBirth", dateOfBirth.getText().toString());
+        intent.putExtra("nationality", nationality.getText().toString());
 
 
         startActivity(intent);
